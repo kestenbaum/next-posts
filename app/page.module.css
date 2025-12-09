@@ -1,0 +1,4 @@
+.wrapper {
+    padding-top: 20px;
+    min-height: calc(100vh - 80px - 60px);
+}
