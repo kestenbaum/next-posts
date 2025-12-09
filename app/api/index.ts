@@ -1,6 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-const BASE_URL = "https://jsonplaceholder.typicode.com";
+const BASE_URL = process.env.API_URL;
 
 export const apiInstance: AxiosInstance = axios.create({
     baseURL: BASE_URL,
