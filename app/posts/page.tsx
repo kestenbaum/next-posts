@@ -1,12 +1,19 @@
 import React from 'react';
 import Link from "next/link";
+import { PostService } from "@/app/api/service/posts";
+import { PostData } from "@/app/api/types/posts";
+import PostLists from "@/app/components/PostLists/PostLists";
 
-const Page = () => {
+const postsService = new PostService();
+
+const Page = async () => {
+    const posts: PostData[] = await postsService.getAllPosts();
+
     return (
-        <div>
+        <section>
             <Link href={"/"}>To main page</Link>
-            <p>posts</p>
-        </div>
+            <PostLists posts={posts} />
+        </section>
     );
 };
 
