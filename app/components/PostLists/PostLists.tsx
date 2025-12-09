@@ -1,6 +1,7 @@
 "use client"
 import React, { FC, useState } from 'react';
 import { PostData } from "@/app/api/types/posts";
+import Link from "next/link";
 
 interface PostListProps {
     posts: PostData[]
@@ -14,6 +15,7 @@ const PostLists: FC<PostListProps> = ({ posts: initialState }) => {
             {posts && posts.map((post: PostData) => (<li key={post.id}>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
+                <Link href={`/posts/${post.id}`}>To Post</Link>
             </li>))}
         </ul>
     );

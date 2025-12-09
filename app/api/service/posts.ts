@@ -9,4 +9,9 @@ export class PostService {
         const response: AxiosResponse = await this.axios.get("/posts");
         return response.data;
     }
+
+    public async getPostById (id :number): Promise<PostData> {
+        const response = await this.axios.get(`/posts/${id}`)
+        return response.data;
+    }
 }

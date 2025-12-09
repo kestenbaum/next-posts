@@ -5,7 +5,6 @@ import { PostData } from "@/app/api/types/posts";
 import PostLists from "@/app/components/PostLists/PostLists";
 
 const postsService = new PostService();
-
 const Page = async () => {
     const posts: PostData[] = await postsService.getAllPosts();
 
