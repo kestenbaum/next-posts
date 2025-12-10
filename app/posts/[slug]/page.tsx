@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { notFound } from "next/navigation";
 import { PostData } from "@/api/types/posts";
-import { PostService } from "@/api/service/posts";
+import { postsService} from "@/api/service/posts";
 
 interface Props {
     params: {
@@ -9,9 +9,7 @@ interface Props {
     }
 }
 
-const postsService = new PostService();
 const Page:FC<Props> = async ({ params }) => {
-
     const { slug } = await params;
 
     let currentPost: PostData;

@@ -3,7 +3,7 @@ import { PostData } from "@/api/types/posts";
 import { apiInstance } from "@/api";
 
 
-export class PostService {
+class PostService {
     private axios: AxiosInstance = apiInstance;
 
     public async getAllPosts (): Promise<PostData[]> {
@@ -16,3 +16,5 @@ export class PostService {
         return response.data;
     }
 }
+
+export const postsService = new PostService();
