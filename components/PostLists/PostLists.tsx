@@ -1,14 +1,20 @@
 "use client"
-import React, { FC, useState } from 'react';
 import Link from "next/link";
 import { PostData } from "@/api/types/posts";
+import { usePostsStore } from "@/store/use-posts-store";
+import { FC, useEffect } from "react";
 
-interface PostListProps {
-    posts: PostData[]
+interface Props {
+    data: PostData[];
 }
 
-const PostLists: FC<PostListProps> = ({ posts: initialState }) => {
-    const [posts, setPosts] = useState<PostData[]>(initialState);
+const PostLists: FC<Props>= ({ data }) => {
+    const setPosts  = usePostsStore((state) => state.setPosts);
+
+    useEffect(() => {
+        setPosts(data);
+    }, [data, setPosts])
+    const posts = usePostsStore((state) => state.posts);
 
     return (
         <ul>
