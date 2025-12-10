@@ -1,7 +1,7 @@
 "use client"
 import React, { FC, useState } from 'react';
-import { PostData } from "@/app/api/types/posts";
 import Link from "next/link";
+import { PostData } from "@/api/types/posts";
 
 interface PostListProps {
     posts: PostData[]

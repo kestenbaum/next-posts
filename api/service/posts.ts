@@ -1,6 +1,7 @@
 import { AxiosInstance, AxiosResponse } from "axios";
-import { apiInstance } from "@/app/api";
-import { PostData } from "@/app/api/types/posts";
+import { PostData } from "@/api/types/posts";
+import { apiInstance } from "@/api";
+
 
 export class PostService {
     private axios: AxiosInstance = apiInstance;

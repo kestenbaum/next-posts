@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from "next/link";
-import { PostService } from "@/app/api/service/posts";
-import { PostData } from "@/app/api/types/posts";
-import PostLists from "@/app/components/PostLists/PostLists";
+import { PostService } from "@/api/service/posts";
+import { PostData } from "@/api/types/posts";
+import PostLists from "@/components/PostLists/PostLists";
+
 
 const postsService = new PostService();
 const Page = async () => {

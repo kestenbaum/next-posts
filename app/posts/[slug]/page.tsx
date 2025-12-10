@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { PostData } from "@/app/api/types/posts";
 import { notFound } from "next/navigation";
-import { PostService } from "@/app/api/service/posts";
+import { PostData } from "@/api/types/posts";
+import { PostService } from "@/api/service/posts";
 
 interface Props {
     params: {
